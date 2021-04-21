@@ -6,12 +6,12 @@ class DiscordFivemApi {
         this.ip = ip;
     }
 
-    host() {
+    getHost() {
         const split = this.ip.split(':')
         return split[0];
     };
 
-    port() {
+    getPort() {
         const split = this.ip.split(':')
         if (split.length >= 2) {
             return split[1];
@@ -110,7 +110,3 @@ class DiscordFivemApi {
 };
 
 module.exports.DiscordFivemApi = DiscordFivemApi;
-
-const srv = new DiscordFivemApi('147.135.4.33:30120');
-
-srv.getPlayersOnline().then((data) => console.log(data))
